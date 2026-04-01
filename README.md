@@ -41,14 +41,32 @@ limitations under the License.
 
 <!-- /.intro -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/blas-ext-base-ndarray-dnansumkbn
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import dnansumkbn from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-ndarray-dnansumkbn@esm/index.mjs';
+var dnansumkbn = require( '@stdlib/blas-ext-base-ndarray-dnansumkbn' );
 ```
 
 #### dnansumkbn( arrays )
@@ -56,8 +74,8 @@ import dnansumkbn from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-ndar
 Computes the sum of a one-dimensional double-precision floating-point ndarray, ignoring `NaN` values and using an improved Kahan–Babuška algorithm.
 
 ```javascript
-import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@esm/index.mjs';
-import ndarray from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-ctor@esm/index.mjs';
+var Float64Array = require( '@stdlib/array-float64' );
+var ndarray = require( '@stdlib/ndarray-base-ctor' );
 
 var xbuf = new Float64Array( [ 1.0, -2.0, NaN, 2.0 ] );
 var x = new ndarray( 'float64', xbuf, [ 4 ], [ 1 ], 0, 'row-major' );
@@ -90,18 +108,13 @@ The function has the following parameters:
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="module">
-
-import bernoulli from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-bernoulli@esm/index.mjs';
-import discreteUniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-discrete-uniform@esm/index.mjs';
-import filledarrayBy from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-filled-by@esm/index.mjs';
-import ndarray from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-ctor@esm/index.mjs';
-import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@esm/index.mjs';
-import dnansumkbn from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-ndarray-dnansumkbn@esm/index.mjs';
+```javascript
+var bernoulli = require( '@stdlib/random-base-bernoulli' );
+var discreteUniform = require( '@stdlib/random-base-discrete-uniform' );
+var filledarrayBy = require( '@stdlib/array-filled-by' );
+var ndarray = require( '@stdlib/ndarray-base-ctor' );
+var ndarray2array = require( '@stdlib/ndarray-to-array' );
+var dnansumkbn = require( '@stdlib/blas-ext-base-ndarray-dnansumkbn' );
 
 function clbk() {
     if ( bernoulli( 0.7 ) > 0 ) {
@@ -116,10 +129,6 @@ console.log( ndarray2array( x ) );
 
 var v = dnansumkbn( [ x ] );
 console.log( v );
-
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -153,7 +162,7 @@ console.log( v );
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -162,11 +171,6 @@ For more information on the project, filing bug reports and feature requests, an
 [![Chat][chat-image]][chat-url]
 
 ---
-
-## License
-
-See [LICENSE][stdlib-license].
-
 
 ## Copyright
 
@@ -213,8 +217,6 @@ Copyright &copy; 2016-2026. The Stdlib [Authors][stdlib-authors].
 [esm-url]: https://github.com/stdlib-js/blas-ext-base-ndarray-dnansumkbn/tree/esm
 [esm-readme]: https://github.com/stdlib-js/blas-ext-base-ndarray-dnansumkbn/blob/esm/README.md
 [branches-url]: https://github.com/stdlib-js/blas-ext-base-ndarray-dnansumkbn/blob/main/branches.md
-
-[stdlib-license]: https://raw.githubusercontent.com/stdlib-js/blas-ext-base-ndarray-dnansumkbn/main/LICENSE
 
 [@neumaier:1974a]: https://doi.org/10.1002/zamm.19740540106
 
